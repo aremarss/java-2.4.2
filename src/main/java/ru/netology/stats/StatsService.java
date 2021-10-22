@@ -40,9 +40,10 @@ public class StatsService {
     }
 
     public int calculateDownAvgSumSales(int[] months) {
+        int avgSum = calculateAvgSum(months);
         int numbersDownMonths = 0;
         for (int numberDownMonths : months) {
-            if (numberDownMonths < calculateAvgSum(months)) {
+            if (numberDownMonths < avgSum) {
                 numbersDownMonths += 1;
             }
         }
@@ -50,9 +51,10 @@ public class StatsService {
     }
 
     public int calculateUpAvgSumSales(int[] months) {
+        int avgSum = calculateAvgSum(months);
         int numbersUpMonths = 0;
         for (int numberUpMonths : months) {
-            if (numberUpMonths > calculateAvgSum(months)) {
+            if (numberUpMonths > avgSum) {
                 numbersUpMonths += 1;
             }
         }
